@@ -1,0 +1,23 @@
+function LetterCount(str) {
+	
+	var arr = str.split(' ');
+	var count = [];
+  
+  for (var i = 0; i < arr.length; i++) {
+    var word = arr[i].split('');
+    count[i] = 0;
+    
+    for (var x = 0; x < word.length-1; x++) {
+      for (var j = x+1; j < word.length; j++) {
+        if ( word[x] == word[j] ) {
+          count[i]++;
+        }
+      }
+    }
+    
+  }
+    var max = Math.max.apply(null, count);
+    if ( max == 0 ) return -1;
+    
+    return arr[count.indexOf(max)];
+}
