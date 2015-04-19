@@ -1,0 +1,20 @@
+function SimpleMode(arr){
+	
+	var max = 0;
+	var mode = -1;
+	
+	for (var i = 0; i < arr.length-1; i++) {
+		for (var x = i+1; x < arr.length; x++) {
+            var count = 0;
+			if ( arr[x] == arr[i] ) {
+				count++;
+				
+				if ( count > max) {
+					max = count;
+					mode = arr[x];
+				}
+			}
+		}
+	}
+	return mode;
+}
