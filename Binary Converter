@@ -1,0 +1,20 @@
+function BinaryConverter(str) { 
+
+  var arr = str.split('').reverse();
+  var powers = [];
+  
+  for ( var i = 0; i < arr.length; i++ ) {
+    var num = 1;
+    
+    if ( arr[i] == 1 ) {
+      for ( var x = 0; x < i; x++ ) {
+        num *= 2;
+      }
+      powers.push(num);
+    }
+    
+    else powers.push(0);
+	}
+  
+  return eval(powers.join('+'));       
+  }
