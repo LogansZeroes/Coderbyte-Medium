@@ -1,0 +1,21 @@
+function PrimeMover(num) { 
+
+  var ans = [];
+  
+  for(var i = 2; i < 10000; i++){
+    if (isPrime(i)) {
+      ans.push(i);
+    }
+  }
+  
+  function isPrime(number) {
+    for (var x = 2; x < number; x++) {
+      if (number % x == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  return ans[num - 1]; 
+         
+}
