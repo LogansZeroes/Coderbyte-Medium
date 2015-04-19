@@ -1,0 +1,22 @@
+function Division(num1,num2) { 
+  
+  var ans = 0;
+  
+  if (num1 < num2) {
+    for (var i = 1; i <= num1; i++) {
+      if ( num1 % i == 0 && num2 % i ==0 ) {
+        ans = i;
+      }
+    }
+  }
+  else {
+    for (var i = 1; i <= num2; i++) {
+      if ( num1 % i == 0 && num2 % i ==0 ) {
+        ans = i;
+      }
+    }
+  }
+
+  return ans; 
+         
+}
