@@ -1,0 +1,31 @@
+function CaesarCipher(str, num) {
+   
+  var strArray = str.split('');
+    
+  for ( var i = 0; i < strArray.length ; i++ ) {
+     
+    if ( strArray[i].match(/[A-Z]/) ) {
+        
+      var code = strArray[i].charCodeAt(0);
+        
+      if(code + num > 90){
+            code = code - 26;
+        }
+        
+      strArray[i]=String.fromCharCode(code+num);
+      }
+      
+    else if(strArray[i].match(/[a-z]/)){
+        
+      var code=strArray[i].charCodeAt(0);
+        
+      if(code + num > 122){
+            code = code - 26;
+        }
+        
+      strArray[i]=String.fromCharCode(code+num);
+      }
+    }
+  
+    return strArray.join('');
+}
