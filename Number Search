@@ -1,0 +1,16 @@
+function NumberSearch(str) { 
+
+  var num = 0;
+  var char = 0;
+  
+  for (var i = 0; i < str.length; i++) {
+    if ( str[i].match(/[0-9]+/) ) {
+      num += parseInt(str[i]);
+    }
+    else if ( str[i].match(/[a-z]/i) ) {
+      char ++;
+    }
+  }
+
+  return Math.round(num/char); 
+}
